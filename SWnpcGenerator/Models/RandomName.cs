@@ -5,10 +5,8 @@ using System.Web;
 
 namespace SWnpcGenerator.Models
 {
-    public class Quirks
+    public class RandomName
     {
-        public string QuirkList { get; set; }
-
-        //add random quick selection
+        //TODO: add random name generation script
     }
 }

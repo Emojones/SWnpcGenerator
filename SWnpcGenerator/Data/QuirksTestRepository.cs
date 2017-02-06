@@ -8,7 +8,9 @@ namespace SWnpcGenerator.Data
 {
     public class QuirksTestRepository
     {
-        
-
+        private static Quirks[] _quirkList = new Quirks[]
+        {
+            //TODO list of quirk options
+        };
     }
 }

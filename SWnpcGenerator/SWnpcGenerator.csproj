@@ -167,10 +167,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="imgs\BlankGearPanel.png" />
-    <Content Include="imgs\BrownPanel.png" />
-    <Content Include="imgs\GrayPanel.png" />
-    <Content Include="imgs\GreenPanel.png" />
     <Content Include="imgs\starfieldBanner.jpg" />
     <Content Include="imgs\statblock.png" />
     <Content Include="Scripts\bootstrap.js" />

@@ -45,13 +45,8 @@
 }
 
 .stats > div {
-    background-image: url("../imgs/statblock.png");
-    background-size:contain;
-    background-repeat: no-repeat;
+    background-color: beige;
 }
-
-
-
 
 .buttons {
     padding-top: 40px;

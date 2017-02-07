@@ -6,9 +6,13 @@
 .jumbotron {
     width: 100%;
     height: 100vh;
-    background: black;
+    background-image: url("../imgs/starfieldBanner.jpg");
     color: yellow;
 }
+
+    .jumbotron small {
+        color: white;
+    }
 
 .jumbotron a {
     position: absolute;

@@ -1,17 +1,31 @@
 ﻿@{
     ViewBag.Title = "RandomNPC";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class = "container body-content">
+    <div class="row">
+        <div class="charName col-md-4">Name</div>
+        <div class="species col-md-4">Species</div>
+    </div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <div class ="stats row">
+        <!-- number to be replaced with strongly typed calls to the model-->
+        <div class="brawn col-md-2 col-xs-2">1</div>
+        <div class="agility col-md-2 ">2</div>
+        <div class="intellect col-md-2 col-xs-2">3</div>
+        <div class="cunning col-md-2 ">4</div>
+        <div class="willpower col-md-2 col-xs-2">5</div>
+        <div class="presence col-md-2 ">6</div>
+    </div>
+    <!-- Quirks should be from the random list then foreach to display them-->
+    <div class="quirks col-md-12">Points out illegal actions but still does them</div>
+    <div class="quirks col-md-12">Thinks they are from the past</div>
+    <div class="quirks col-md-12">Recovering cannibal</div>
+
+    <div class="row">
+        <!-- add a save button-->
+        <!-- add an edit button-->
+        <!-- add a delete button-->
+    </div>
+
+</div>

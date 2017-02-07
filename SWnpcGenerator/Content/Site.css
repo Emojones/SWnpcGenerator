@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 20px;
     font-family: "Franklin Gothic";
 }
@@ -26,6 +26,32 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
+
+/* Name and Species formatting*/
+.nameSpecies {
+    padding-top: 50px;
+}
+
+.nameSpecies div {
+    background-image: url("../imgs/GrayPanel.png");
+    width:auto;
+    height: auto;
+}
+
+/* Stat block formatting */
+.stats {
+    padding-bottom: 25px;
+}
+
+.stats > div {
+    background-image: url("../imgs/statblock.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+
+
 
 .buttons {
     padding-top: 40px;

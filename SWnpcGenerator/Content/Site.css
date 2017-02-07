@@ -1,7 +1,7 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 20px;
-    font-family: 'Franklin Gothic';
+    font-family: "Franklin Gothic";
 }
 
 .jumbotron {
@@ -11,9 +11,9 @@
     color: #EBD71C;
 }
 
-    .jumbotron small {
-        color: #4bd5ee;
-    }
+.jumbotron small {
+    color: #4bd5ee;
+}
 
 .jumbotron a {
     position: absolute;
@@ -27,7 +27,9 @@
     padding-right: 15px;
 }
 
-
+.buttons {
+    padding-top: 40px;
+}
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 

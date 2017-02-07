@@ -2,30 +2,46 @@
     ViewBag.Title = "RandomNPC";
 }
 
-<div class = "container body-content">
-    <div class="row">
-        <div class="charName col-md-4">Name</div>
-        <div class="species col-md-4">Species</div>
-    </div>
+    <div  class="container body-content">
+        <div class="row">
+            <div class="charName col-md-3 pull-left"><h3>Name</h3>Test name</div>
+            <div class="species col-md-3 pull-right"><h3>Species</h3>Human</div>
+        </div>
 
-    <div class ="stats row">
-        <!-- number to be replaced with strongly typed calls to the model-->
-        <div class="brawn col-md-2 col-xs-2">1</div>
-        <div class="agility col-md-2 ">2</div>
-        <div class="intellect col-md-2 col-xs-2">3</div>
-        <div class="cunning col-md-2 ">4</div>
-        <div class="willpower col-md-2 col-xs-2">5</div>
-        <div class="presence col-md-2 ">6</div>
-    </div>
-    <!-- Quirks should be from the random list then foreach to display them-->
-    <div class="quirks col-md-12">Points out illegal actions but still does them</div>
-    <div class="quirks col-md-12">Thinks they are from the past</div>
-    <div class="quirks col-md-12">Recovering cannibal</div>
+        <h3>Stats</h3>
+        <div class="stats row">
+            <!-- number to be replaced with strongly typed calls to the model-->
+            <div class="brawn col-md-2 col-xs-2">1</div>
+            <div class="agility col-md-2 ">2</div>
+            <div class="intellect col-md-2 col-xs-2">3</div>
+            <div class="cunning col-md-2 ">4</div>
+            <div class="willpower col-md-2 col-xs-2">5</div>
+            <div class="presence col-md-2 ">6</div>
+        </div>
 
-    <div class="row">
-        <!-- add a save button-->
-        <!-- add an edit button-->
-        <!-- add a delete button-->
-    </div>
+        <!-- Quirks should be from the random list then foreach to display them-->
+        <div class="panel panel-info">
+            <div class="panel-heading">Quirks</div>
+            <ul class="list-group">
+                <!--TODO: for each loop for each quirk-->
+                <li class="list-group-item quirks col-md-12">Points out illegal actions but still does them</li>
+                <li class="list-group-item quirks col-md-12">Thinks they are from the past</li>
+                <li class="list-group-item quirks col-md-12">Recovering cannibal</li>
+            </ul>
+        </div>
+        
 
-</div>
+        <div class="row buttons">
+            <button type="button" class="btn btn-primary btn-lg pull-left" aria-label="Left Align">
+                <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
+                Keep this one!
+            </button>
+
+            <button type="button" class="btn btn-warning btn-lg col-md-4 pull-right" aria-label="Left Align">
+                <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
+                Find someone else...
+            </button>
+        </div>
+
+
+    </div>

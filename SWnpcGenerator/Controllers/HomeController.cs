@@ -27,5 +27,14 @@ namespace SWnpcGenerator.Controllers
 
             return View();
         }
+
+        //TODO ActionResult Add
+        //TODO ActionResult HttpPost Add
+
+        //TODO ActionResult Edit
+        //TODO ActionResult HttpPost Edit
+
+        //TODO ActionResult Delete
+        //TODO ActionResult HttpPost Delete
     }
 }

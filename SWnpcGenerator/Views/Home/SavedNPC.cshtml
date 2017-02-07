@@ -1,7 +1,25 @@
 ﻿@{
     ViewBag.Title = "SavedNPC";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="container body-content">
+    <div class="row">
+        <!--Foreach item in the favorite database-->
+        <!--save button-->
+        <button type="button" class="btn btn-primary col-md-2" aria-label="Left Align">
+            <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+            Save
+        </button>
+        <!--edit button-->
+        <button type="button" class="btn btn-info col-md-2 col-md-offset-2" aria-label="Left Align">
+            <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
+            Update
+        </button>
+        <!--delete button-->
+        <button type="button" class="btn btn-danger col-md-2 col-md-offset-2" aria-label="Left Align">
+            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+            Delete
+        </button>
+    </div>
+
+</div>

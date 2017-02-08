@@ -9,13 +9,13 @@ namespace SWnpcGenerator.Controllers
 {
     public class HomeController : Controller
     {
-        Context db = new Context();
+        SwContext db = new SwContext();
         
         public ActionResult Index()
         {
             try
             {
-                Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
+                Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SwContext>());
                 return View();
             }
             catch (Exception)
@@ -32,10 +32,11 @@ namespace SWnpcGenerator.Controllers
 
         public ActionResult SavedNPC()
         {
+            
             //this is just for testing until the table for saved npcs is actually created
             var savedNpc = new Species()
             {
-               SpeciesName = "berthern",
+               SpeciesName = "berthen",
                WoundThreshold = 6,
                StrainThreshold = 1,
                StartExp = 0,

@@ -3,9 +3,9 @@ using System.Data.Entity;
 
 namespace SWnpcGenerator.Models
 {
-    public class DbInitializer : DropCreateDatabaseIfModelChanges<Context>
+    public class DbInitializer : DropCreateDatabaseIfModelChanges<SwContext>
     {
-        protected override void Seed(Context db)
+        protected override void Seed(SwContext db)
         {
             GetSpecies().ForEach(c => db.Spp.Add(c));
             GetQuirks().ForEach(c => db.Quirks.Add(c));

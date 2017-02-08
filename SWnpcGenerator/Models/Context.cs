@@ -3,9 +3,9 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace SWnpcGenerator.Models
 {
-    public class Context : DbContext
+    public class SwContext : DbContext
     {
-        public Context() : base("SWnpcGenerator")
+        public SwContext() : base("name = SWnpcGenerator")
         {
         }
 

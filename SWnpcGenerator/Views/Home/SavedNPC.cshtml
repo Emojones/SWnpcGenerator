@@ -1,8 +1,64 @@
-﻿@{
+﻿@model SWnpcGenerator.Models.Species
+
+@{
     ViewBag.Title = "SavedNPC";
 }
 
+
 <div class="container body-content">
+    <div class="row nameSpecies">
+        <div class="charName col-md-3 pull-left"><h3>Name</h3>@Model.SpeciesName</div>
+        <div class="species col-md-3 pull-right"><h3>Species</h3>@Model.SpeciesName</div>
+    </div>
+
+    <h3>Stats</h3>
+    <div class="stats row">
+        <!-- number to be replaced with strongly typed calls to the model-->
+        <!--foreach loop to iterate through the fields in stats-->
+        <div class="statInterior col-md-2">
+            <div>@Model.Brawn</div>
+            <div class="brawn">Brawn</div>
+        </div>
+
+        <div class="statInterior col-md-2">
+            <div>@Model.Agility</div>
+            <div class="agility">Agility</div>
+        </div>
+
+        <div class="statInterior col-md-2">
+            <div>@Model.Intellect</div>
+            <div class="intellect">Intellect</div>
+        </div>
+
+        <div class="statInterior col-md-2">
+            <div>@Model.Cunning</div>
+            <div class="cunning">Cunning</div>
+        </div>
+
+        <div class="statInterior col-md-2">
+            <div>@Model.Willpower</div>
+            <div class="willpower">Willpower</div>
+        </div>
+
+        <div class="statInterior col-md-2">
+            <div>@Model.Presence</div>
+            <div class="presence">Presence</div>
+        </div>
+
+    </div>
+
+    <!-- Quirks should be from the random list then foreach to display them-->
+    <div class="panel panel-info">
+        <div class="panel-heading">Quirks</div>
+        <ul class="list-group">
+            <!--TODO: for each loop for each quirk-->
+            <li class="list-group-item quirks col-md-12">Points out illegal actions but still does them</li>
+            <li class="list-group-item quirks col-md-12">Thinks they are from the past</li>
+            <li class="list-group-item quirks col-md-12">Recovering cannibal</li>
+        </ul>
+    </div>
+
+
     <div class="row">
         <!--Foreach item in the favorite database-->
         <!--save button-->
@@ -22,4 +78,7 @@
         </button>
     </div>
 
+
 </div>
+
+

@@ -5,12 +5,13 @@ namespace SWnpcGenerator.Models
 {
     public class DbInitializer : DropCreateDatabaseIfModelChanges<Context>
     {
-        protected override void Seed(Context context)
+        protected override void Seed(Context db)
         {
-            GetSpecies().ForEach(c => context.Specieses.Add(c));
+            GetSpecies().ForEach(c => db.Spp.Add(c));
+            GetQuirks().ForEach(c => db.Quirks.Add(c));
         }
 
-            private static List<Species> GetSpecies()
+        private static List<Species> GetSpecies()
         {
             var species = new List<Species>
             {
@@ -126,8 +127,67 @@ namespace SWnpcGenerator.Models
                  }
             };
             return species;
-        }  
+        }
 
+        private static List<Quirk> GetQuirks()
+        {
+            var quirks = new List<Quirk>
+            {
+            new Quirk
+                {QuirkList = "Is racist"},
+            new Quirk
+                {QuirkList = "always eating something" },
+             new Quirk
+                {QuirkList = "will not ever remember anyone's names except themselves" },
+              new Quirk
+                {QuirkList = "constantly mispronouncing the most simple of words but has a great vocabulary" },
+               new Quirk
+                {QuirkList = "if it's an ongoing interaction give the person a new profession every time. Either as a new job or just one of so many duties they are capable of doing" },
+                new Quirk
+                {QuirkList = "Recovering cannibal" },
+                 new Quirk
+                {QuirkList = "Fear of droids" },
+                  new Quirk
+                {QuirkList = "Thinks they are in a VR game" },
+                   new Quirk
+                {QuirkList = "Overly pleasing" },
+                    new Quirk
+                {QuirkList = "Likes to take things apart" },
+                     new Quirk
+                {QuirkList = "Compulsively lies" },
+                      new Quirk
+                {QuirkList = "Split personality" },
+                       new Quirk
+                {QuirkList = "Loves bureaucracy" },
+                        new Quirk
+                {QuirkList = "Overweight" },
+                         new Quirk
+                {QuirkList = "Sickly looking" },
+                          new Quirk
+                {QuirkList = "Gambling addiction and is always flipping a coin to make decisions" },
+                           new Quirk
+                {QuirkList = "Talks like an over the top announcer" },
+                            new Quirk
+                {QuirkList = "" },
+                             new Quirk
+                {QuirkList = "Thinks they are lost royalty" },
+                              new Quirk
+                {QuirkList = "Only responds positively to polite conversation" },
+                               new Quirk
+                {QuirkList = "Fights for droid rights" },
+                                new Quirk
+                {QuirkList = "Conspiracy theorist" },
+                                 new Quirk
+                {QuirkList = "Points out illegal actions but still does them" },
+                                  new Quirk
+                {QuirkList = "Talks in third person" },
+                                   new Quirk
+                {QuirkList = "Thinks they are from the past" },
+                                    new Quirk
+                {QuirkList = "Is a cowboy" }
+            };
+            return quirks;
+        }
 
     }
 }

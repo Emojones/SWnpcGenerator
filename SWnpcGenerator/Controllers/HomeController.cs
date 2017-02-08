@@ -1,4 +1,8 @@
 ﻿using SWnpcGenerator.Models;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace SWnpcGenerator.Controllers
@@ -9,22 +13,41 @@ namespace SWnpcGenerator.Controllers
         
         public ActionResult Index()
         {
-
-            return View();
+            try
+            {
+                Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
+                return View();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public ActionResult RandomNPC()
         {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
+           return View();
         }
 
         public ActionResult SavedNPC()
         {
-            ViewBag.Message = "Your contact page.";
+            //this is just for testing until the table for saved npcs is actually created
+            var savedNpc = new Species()
+            {
+               SpeciesName = "berthern",
+               WoundThreshold = 6,
+               StrainThreshold = 1,
+               StartExp = 0,
+               Brawn = 6,
+               Agility = 5,
+               Intellect = 4,
+               Cunning = 3,
+               Willpower = 1,
+               Presence = 1
+            };
 
-            return View();
+            return View(savedNpc);
         }
 
         //TODO ActionResult Add

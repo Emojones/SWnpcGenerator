@@ -9,7 +9,8 @@ namespace SWnpcGenerator.Models
         {
         }
 
-        public DbSet<Species> Specieses { get; set; }
+        public DbSet<Species> Spp { get; set; }
+        public DbSet<Quirk> Quirks { get; set; }
 
         //overrides pluralizing of database names
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

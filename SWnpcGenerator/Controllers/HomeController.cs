@@ -9,19 +9,13 @@ namespace SWnpcGenerator.Controllers
 {
     public class HomeController : Controller
     {
-        SwContext db = new SwContext();
+        Context db = new Context();
         
         public ActionResult Index()
         {
-            try
-            {
-                Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SwContext>());
-                return View();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+           
+           return View();
+ 
         }
 
         public ActionResult RandomNPC()

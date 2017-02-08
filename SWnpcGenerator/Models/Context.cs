@@ -3,10 +3,12 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace SWnpcGenerator.Models
 {
-    public class SwContext : DbContext
+    public class Context : DbContext
     {
-        public SwContext() : base("name = SWnpcGenerator")
+        public Context() : base("SWnpcGenerator")
         {
+            Database.SetInitializer(new CreateDatabaseIfNotExists<Context>());
+            Database.SetInitializer(new DbInitializer());
         }
 
         public DbSet<Species> Spp { get; set; }

@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
-using SWnpcGenerator.Models;
 
-namespace SWnpcGenerator.DAL
+namespace SWnpcGenerator
 {
-    public class SpeciesInitializer : DropCreateDatabaseIfModelChanges<Context>
+    public class DbInitializer : DropCreateDatabaseIfModelChanges<Context>
     {
         protected override void Seed(Context context)
+        {
+            GetSpecies().ForEach(c => context.Species.Add(c));
+        }
+
+            private static List<Species> GetSpecies()
         {
             var species = new List<Species>
             {
@@ -124,7 +125,7 @@ namespace SWnpcGenerator.DAL
                      Presence = 2
                  }
             };
-            context.SaveChanges();
+            return species;
         }  
 
 

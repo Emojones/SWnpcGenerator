@@ -9,7 +9,7 @@ namespace SWnpcGenerator.Controllers
 {
     public class HomeController : Controller
     {
-        Context db = new Context();
+        Context context = new Context();
         
         public ActionResult Index()
         {
@@ -26,23 +26,13 @@ namespace SWnpcGenerator.Controllers
 
         public ActionResult SavedNPC()
         {
-            
-            //this is just for testing until the table for saved npcs is actually created
-            var savedNpc = new Species()
-            {
-               SpeciesName = "berthen",
-               WoundThreshold = 6,
-               StrainThreshold = 1,
-               StartExp = 0,
-               Brawn = 6,
-               Agility = 5,
-               Intellect = 4,
-               Cunning = 3,
-               Willpower = 1,
-               Presence = 1
-            };
 
-            return View(savedNpc);
+            //this is just for testing until the table for saved npcs is actually created
+            var test = context.Spp
+                .Include(c => c.SpeciesName)
+                .Where(d => d.Id == 1);
+            
+            return View(test);
         }
 
         //TODO ActionResult Add

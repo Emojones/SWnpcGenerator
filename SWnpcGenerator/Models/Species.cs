@@ -12,7 +12,12 @@ namespace SWnpcGenerator.Models
         public int WoundThreshold { get; set; }
         public int StrainThreshold { get; set; }
         public int StartExp { get; set; }
-        public Stats[] Stats { get; set; } 
+        public int Brawn { get; set; }
+        public int Agility { get; set; }
+        public int Intellect { get; set; }
+        public int Cunning { get; set; }
+        public int Willpower { get; set; }
+        public int Presence { get; set; }
 
         //add species random selection
     }

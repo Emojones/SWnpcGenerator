@@ -1,11 +1,15 @@
-﻿using System.Web.Mvc;
+﻿using SWnpcGenerator.Models;
+using System.Web.Mvc;
 
 namespace SWnpcGenerator.Controllers
 {
     public class HomeController : Controller
     {
+        Context db = new Context();
+        
         public ActionResult Index()
         {
+
             return View();
         }
 

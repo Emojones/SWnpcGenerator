@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace SWnpcGenerator
+namespace SWnpcGenerator.Models
 {
     public class Context : DbContext
     {
@@ -8,7 +9,13 @@ namespace SWnpcGenerator
         {
         }
 
-        public DbSet<Species> Species { get; set; }
+        public DbSet<Species> Specieses { get; set; }
+
+        //overrides pluralizing of database names
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
 
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace SWnpcGenerator
+namespace SWnpcGenerator.Models
 {
     public class Species
     {
@@ -29,7 +29,5 @@ namespace SWnpcGenerator
         public int Willpower { get; set; }
         [Required]
         public int Presence { get; set; }
-
-        //add species random selection
     }
 }

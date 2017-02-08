@@ -3,6 +3,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using SWnpcGenerator.Models;
 
 namespace SWnpcGenerator
 {
@@ -14,9 +15,6 @@ namespace SWnpcGenerator
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            // Initialize the database.
-            Database.SetInitializer(new DbInitializer());
         }
     }
 }

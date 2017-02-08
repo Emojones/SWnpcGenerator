@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 
-namespace SWnpcGenerator
+namespace SWnpcGenerator.Models
 {
     public class DbInitializer : DropCreateDatabaseIfModelChanges<Context>
     {
         protected override void Seed(Context context)
         {
-            GetSpecies().ForEach(c => context.Species.Add(c));
+            GetSpecies().ForEach(c => context.Specieses.Add(c));
         }
 
             private static List<Species> GetSpecies()

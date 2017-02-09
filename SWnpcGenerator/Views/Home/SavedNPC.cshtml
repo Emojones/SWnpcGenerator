@@ -1,4 +1,5 @@
-﻿@model  SWnpcGenerator.Models.Species
+﻿@model IEnumerable<SWnpcGenerator.Models.Species>
+
 
 @{
     ViewBag.Title = "SavedNPC";
@@ -7,10 +8,10 @@
 
 <div class="container body-content">
 
- 
+ @foreach (var item in Model) { 
     <div class="row nameSpecies">
-        <div class="charName col-md-3 pull-left"><h3>Name</h3>@Model.SpeciesName</div>
-        <div class="species col-md-3 pull-right"><h3>Species</h3>@Model.SpeciesName</div>
+        <div class="charName col-md-3 pull-left"><h3>Name</h3>Name</div>
+        <div class="species col-md-3 pull-right"><h3>@Html.DisplayNameFor(model => model.SpeciesName)</h3>@Html.DisplayFor(modelItem => item.SpeciesName)</div>
     </div>
 
     <h3>Stats</h3>
@@ -18,32 +19,32 @@
         <!-- number to be replaced with strongly typed calls to the model-->
         <!--foreach loop to iterate through the fields in stats-->
         <div class="statInterior col-md-2">
-            <div>@Model.Brawn</div>
+            <div>@Html.DisplayFor(modelItem => item.Brawn)</div>
             <div class="brawn">Brawn</div>
         </div>
 
         <div class="statInterior col-md-2">
-            <div>@Model.Agility</div>
+            <div>@Html.DisplayFor(modelItem => item.Agility)</div>
             <div class="agility">Agility</div>
         </div>
 
         <div class="statInterior col-md-2">
-            <div>@Model.Intellect</div>
+            <div>@Html.DisplayFor(modelItem => item.Intellect)</div>
             <div class="intellect">Intellect</div>
         </div>
 
         <div class="statInterior col-md-2">
-            <div>@Model.Cunning</div>
+            <div>@Html.DisplayFor(modelItem => item.Cunning)</div>
             <div class="cunning">Cunning</div>
         </div>
 
         <div class="statInterior col-md-2">
-            <div>@Model.Willpower</div>
+            <div>@Html.DisplayFor(modelItem => item.Willpower)</div>
             <div class="willpower">Willpower</div>
         </div>
 
         <div class="statInterior col-md-2">
-            <div>@Model.Presence</div>
+            <div>@Html.DisplayFor(modelItem => item.Presence)</div>
             <div class="presence">Presence</div>
         </div>
 
@@ -62,24 +63,20 @@
 
 
     <div class="row">
-        <!--Foreach item in the favorite database-->
-        <!--save button-->
-        <button type="button" class="btn btn-primary col-md-2" aria-label="Left Align">
-            <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
-            Save
-        </button>
+      
         <!--edit button-->
-        <button type="button" class="btn btn-info col-md-2 col-md-offset-2" aria-label="Left Align">
+        <button type="button" class="btn btn-info pull-left" aria-label="Left Align">
             <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
             Update
         </button>
         <!--delete button-->
-        <button type="button" class="btn btn-danger col-md-2 col-md-offset-2" aria-label="Left Align">
+        <button type="button" class="btn btn-danger pull-right" aria-label="Left Align">
             <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
             Delete
         </button>
     </div>
-
+    <hr />
+ }
     
 </div>
 

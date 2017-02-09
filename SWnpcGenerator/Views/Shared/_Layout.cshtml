@@ -20,7 +20,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-right navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Random NPC", "RandomNPC", "Home")</li>
+                    <li>@Html.ActionLink("Random NPC", "Create", "Home")</li>
                     <li>@Html.ActionLink("My Saved NPC", "SavedNPC", "Home")</li>
                 </ul>
             </div>
@@ -29,7 +29,7 @@
     <div>
         @RenderBody()
         
-        <hr />
+        
         <footer>
             <p>&copy; @DateTime.Now.Year Star Wars NPC Generator</p>
         </footer>

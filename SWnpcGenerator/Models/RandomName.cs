@@ -39,7 +39,7 @@ namespace SWnpcGenerator
 
        
         string secondPart = " " + _thirdSyllable;
-        public string Generate()
+        public string GenerateName()
         {
             RandomFirstSyllable();
             RandomSecondSyllable();

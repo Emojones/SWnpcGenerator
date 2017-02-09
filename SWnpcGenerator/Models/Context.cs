@@ -13,6 +13,7 @@ namespace SWnpcGenerator.Models
 
         public DbSet<Species> Spp { get; set; }
         public DbSet<Quirk> Quirks { get; set; }
+        //TODO add player favorite db
 
         //overrides pluralizing of database names
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

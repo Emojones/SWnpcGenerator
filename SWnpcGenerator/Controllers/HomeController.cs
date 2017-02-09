@@ -26,12 +26,8 @@ namespace SWnpcGenerator.Controllers
 
         public ActionResult SavedNPC()
         {
-
+            var test = context.Spp.Include(c => c.SpeciesName);
             //this is just for testing until the table for saved npcs is actually created
-            var test = context.Spp
-                .Include(c => c.SpeciesName)
-                .Where(d => d.Id == 1);
-            
             return View(test);
         }
 

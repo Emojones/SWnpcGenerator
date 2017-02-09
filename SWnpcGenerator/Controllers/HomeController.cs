@@ -19,7 +19,8 @@ namespace SWnpcGenerator.Controllers
            return View(); 
         }
 
-        public ActionResult Create()
+        //Create
+        public ActionResult RandomNPC()
         {            
            return View();
         }
@@ -29,7 +30,7 @@ namespace SWnpcGenerator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,SpeciesName,WoundThreshold,StrainThreshold,StartExp,Brawn,Agility,Intellect,Cunning,Willpower,Presence")] Species species)
+        public ActionResult RandomNPC([Bind(Include = "Id,SpeciesName,WoundThreshold,StrainThreshold,StartExp,Brawn,Agility,Intellect,Cunning,Willpower,Presence")] Species species)
         {
             if (ModelState.IsValid)
             {

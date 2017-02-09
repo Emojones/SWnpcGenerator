@@ -1,73 +1,142 @@
-﻿@{
+﻿@model SWnpcGenerator.Models.Species
+
+@{
     ViewBag.Title = "RandomNPC";
 }
 
-    <div  class="container body-content">
-        <div class="row nameSpecies">
-            <div class="charName col-md-3 pull-left"><h3>Name</h3>Name</div>
-            <div class="species col-md-3 pull-right"><h3>Species</h3>Human</div>
+<div class="container body-content">
+    <h2>Look at this one!</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+           @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="nameSpecies">
+                <!--Random name block
+                 <div class="form-group">
+                    @Html.LabelFor(model => model.SpeciesName, htmlAttributes: new { @class = "control-label charName pull-left" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SpeciesName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SpeciesName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                -->
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SpeciesName, htmlAttributes: new { @class = "control-label species" })
+                    <div>
+                        @Html.EditorFor(model => model.SpeciesName, new { htmlAttributes = new { @class = "form-control col-md-3" } })
+                        @Html.ValidationMessageFor(model => model.SpeciesName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="stats row">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.WoundThreshold, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.WoundThreshold, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.WoundThreshold, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StrainThreshold, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StrainThreshold, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StrainThreshold, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StartExp, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StartExp, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StartExp, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Brawn, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Brawn, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Brawn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Agility, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Agility, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Agility, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Intellect, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Intellect, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Intellect, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Cunning, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Cunning, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Cunning, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Willpower, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Willpower, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Willpower, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Presence, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Presence, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Presence, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quirks should be from the random list then foreach to display them-->
+            <div class="panel panel-info">
+                <div class="panel-heading">Quirks</div>
+                <ul class="list-group">
+                    <!--TODO: for each loop for each quirk-->
+                    <li class="list-group-item quirks col-md-12">Points out illegal actions but still does them</li>
+                    <li class="list-group-item quirks col-md-12">Thinks they are from the past</li>
+                    <li class="list-group-item quirks col-md-12">Recovering cannibal</li>
+                </ul>
+            </div>
+
+
+            <div class="form-group row buttons">               
+                    <input type="submit" value="Save this one!" class="btn btn-primary btn-lg pull-left col-lg-2 col-xs-12" aria-label="Left Align" />
+
+                <button type="button" class="btn btn-danger btn-lg col-md-4 pull-right col-lg-3 col-xs-12" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
+                    Find someone else...
+                </button>
+            </div>
         </div>
-      
-        <h3>Stats</h3>
-        <div class="stats row">
-            <!-- number to be replaced with strongly typed calls to the model-->
-            <!--foreach loop to iterate through the fields in stats-->
-            <div class="statInterior col-md-2">
-                <div>1</div>
-                <div class="brawn">Brawn</div>
-            </div>
 
-            <div class="statInterior col-md-2">
-                <div>2</div>
-                <div class="agility">Agility</div>
-            </div>
-
-            <div class="statInterior col-md-2">
-                <div>3</div>
-                <div class="intellect">Intellect</div>
-            </div>
-
-            <div class="statInterior col-md-2">
-                <div>4</div>
-                <div class="cunning">Cunning</div>
-            </div>
-
-            <div class="statInterior col-md-2">
-                <div>5</div>
-                <div class="willpower">Willpower</div>
-            </div>
-
-            <div class="statInterior col-md-2">
-                <div>6</div>
-                <div class="presence">Presence</div>
-            </div>
-
-        </div>
-
-        <!-- Quirks should be from the random list then foreach to display them-->
-        <div class="panel panel-info">
-            <div class="panel-heading">Quirks</div>
-            <ul class="list-group">
-                <!--TODO: for each loop for each quirk-->
-                <li class="list-group-item quirks col-md-12">Points out illegal actions but still does them</li>
-                <li class="list-group-item quirks col-md-12">Thinks they are from the past</li>
-                <li class="list-group-item quirks col-md-12">Recovering cannibal</li>
-            </ul>
-        </div>
-        
-
-        <div class="row buttons">
-            <button type="button" class="btn btn-primary btn-lg pull-left col-lg-2 col-xs-12" aria-label="Left Align">
-                <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
-                Keep this one!
-            </button>
- 
-
-            <button type="button" class="btn btn-danger btn-lg col-md-4 pull-right col-lg-3 col-xs-12" aria-label="Left Align">
-                <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
-                Find someone else...
-            </button>
-        </div>
-
-
+    }
+</div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
     </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

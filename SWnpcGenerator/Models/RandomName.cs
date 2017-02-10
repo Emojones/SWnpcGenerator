@@ -38,8 +38,8 @@ namespace SWnpcGenerator
         }
 
        
-        string secondPart = " " + _thirdSyllable;
-        public string GenerateName()
+        static string secondPart = " " + _thirdSyllable;
+        public static string GenerateName()
         {
             RandomFirstSyllable();
             RandomSecondSyllable();

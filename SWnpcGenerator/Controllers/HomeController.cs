@@ -22,8 +22,9 @@ namespace SWnpcGenerator.Controllers
         //Create
         public ActionResult RandomNPC()
         {
-                      
-            return View();
+            RandomSpecies rando = new RandomSpecies();
+            rando.GetRandomSpecies();     
+            return View(rando.GetRandomSpecies());
         }
 
         // POST: Species/Create

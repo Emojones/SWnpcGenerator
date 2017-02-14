@@ -7,5 +7,15 @@ namespace SWnpcGenerator.Models
 {
     public class RandomQuirks
     {
+        Context db = new Context();
+
+        public object GetRandomQuirks()
+        {
+            var getRandomQuirks = db.Quirks
+                    .OrderBy(c => Guid.NewGuid())
+                    .FirstOrDefault();
+
+            return getRandomQuirks;
+        }
     }
 }

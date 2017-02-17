@@ -113,10 +113,11 @@
                     </div>
                 </div>
 
-                <!-- Quirks should be from the random list then foreach to display them-->
+                
                 <div class="panel panel-info">
                     <div class="panel-heading">Quirks</div>
-                    <ul class="list-group">                        
+                    <ul class="list-group"> 
+                           <!-- TODO: quirks are getting cut off, same quirk is getting passed all threetimes.-->                    
                         @for(var i = 0; i < 3; i++){
                         <li>@Html.EditorFor(model => model.Quirk.QuirkList, new { htmlAttributes = new { @class = "list-group-item" } })</li>
                           }           
@@ -127,7 +128,8 @@
                 <div class="form-group row buttons">
                     <input type="submit" value="Save this one!" class="btn btn-primary btn-lg pull-left col-lg-2 col-xs-12" aria-label="Left Align" />
 
-                    <button type="button" class="btn btn-danger btn-lg col-md-4 pull-right col-lg-3 col-xs-12" aria-label="Left Align">
+                    <button type="button" class="btn btn-danger btn-lg col-md-4 pull-right col-lg-3 col-xs-12" aria-label="Left Align"
+                            value="Refresh Page" onClick="window.location.reload()">
                         <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
                         Find someone else...
                     </button>

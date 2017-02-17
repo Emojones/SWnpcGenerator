@@ -22,8 +22,17 @@ namespace SWnpcGenerator.Controllers
         //Create
         public ActionResult RandomNPC()
         {
-            RandomSpecies test = new RandomSpecies();
-            return View(test.GetRandomSpecies());
+            var vm = new RandomNPC();
+            var randomSpeciesRepository = new RandomSpecies();
+            vm.Species = randomSpeciesRepository.GetRandomSpecies();
+
+            var randomQuirkRepository = new RandomQuirks();
+            vm.Quirk = randomQuirkRepository.GetRandomQuirks();
+
+            var randomNameRepository = new RandomName();
+            vm.RandomName = randomNameRepository.GenerateName();
+                                 
+            return View(vm);
         }
 
         // POST: Species/Create
@@ -31,17 +40,15 @@ namespace SWnpcGenerator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RandomNPC([Bind(Include = "Id,SpeciesName,WoundThreshold,StrainThreshold,StartExp,Brawn,Agility,Intellect,Cunning,Willpower,Presence")] Species species)
+        public ActionResult RandomNPC(RandomNPC model)
         {
             if (ModelState.IsValid)
             {
-                //change this to the new DB that is made up of random stuffs
-                db.Spp.Add(species);
-                db.SaveChanges();
+                //change this to the new DB that is made up of random stuffs             
                 return RedirectToAction("Index");
             }
 
-            return View(species);
+            return View(model);
         }
 
 

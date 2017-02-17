@@ -1,7 +1,8 @@
-﻿@model SWnpcGenerator.Models.Species
+﻿@model SWnpcGenerator.Models.RandomNPC
 
 @{
     ViewBag.Title = "RandomNPC";
+    
 }
 
 <div class="container body-content">
@@ -15,22 +16,21 @@
            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
             <div class="row">
-            <div class="nameSpecies">
-                <!--Random name block
-                 <div class="form-group">
-                    @Html.LabelFor(model => model.SpeciesName, htmlAttributes: new { @class = "control-label charName pull-left" })
+            <div class="nameSpecies">               
+                <div class="form-group col-md-2">  
+                    @Html.LabelFor(model => model.RandomName, htmlAttributes: new { @class = "control-label" })                 
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.SpeciesName, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.SpeciesName, "", new { @class = "text-danger" })
+                        @Html.EditorFor(Model => Model.RandomName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(Model => Model.RandomName, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                -->
+                
 
                 <div class="form-group col-md-2">
-                    @Html.LabelFor(model => model.SpeciesName, htmlAttributes: new { @class = "control-label pull-left" })
+                    @Html.LabelFor(model => model.Species.SpeciesName, htmlAttributes: new { @class = "control-label" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.SpeciesName, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.SpeciesName, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.Species.SpeciesName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Species.SpeciesName, "", new { @class = "text-danger" })
                     </div>
                 </div>
             </div>
@@ -39,76 +39,76 @@
 
             <div class="row">
                 <div class="form-group col-md-2">
-                    @Html.LabelFor(model => model.WoundThreshold, htmlAttributes: new { @class = "control-label" })
+                    @Html.LabelFor(model => model.Species.WoundThreshold, htmlAttributes: new { @class = "control-label" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.WoundThreshold, new { htmlAttributes = new { @class = "form-control"} })
-                        @Html.ValidationMessageFor(model => model.WoundThreshold, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.Species.WoundThreshold, new { htmlAttributes = new { @class = "form-control"} })
+                        @Html.ValidationMessageFor(model => model.Species.WoundThreshold, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group col-md-2">
-                    @Html.LabelFor(model => model.StrainThreshold, htmlAttributes: new { @class = "control-label" })
+                    @Html.LabelFor(model => model.Species.StrainThreshold, htmlAttributes: new { @class = "control-label" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.StrainThreshold, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.StrainThreshold, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.Species.StrainThreshold, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Species.StrainThreshold, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="form-group col-md-2">
-                    @Html.LabelFor(model => model.StartExp, htmlAttributes: new { @class = "control-label" })
+                    @Html.LabelFor(model => model.Species.StartExp, htmlAttributes: new { @class = "control-label" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.StartExp, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.StartExp, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.Species.StartExp, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Species.StartExp, "", new { @class = "text-danger" })
                     </div>
                 </div>
             </div>
 
                 <div class="row">
                     <div class="form-group col-md-2">
-                        @Html.LabelFor(model => model.Brawn, htmlAttributes: new { @class = "control-label" })
+                        @Html.LabelFor(model => model.Species.Brawn, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Brawn, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Brawn, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Species.Brawn, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Species.Brawn, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group col-md-2">
-                        @Html.LabelFor(model => model.Agility, htmlAttributes: new { @class = "control-label" })
+                        @Html.LabelFor(model => model.Species.Agility, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Agility, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Agility, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Species.Agility, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Species.Agility, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group col-md-2">
-                        @Html.LabelFor(model => model.Intellect, htmlAttributes: new { @class = "control-label" })
+                        @Html.LabelFor(model => model.Species.Intellect, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Intellect, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Intellect, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Species.Intellect, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Species.Intellect, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group col-md-2">
-                        @Html.LabelFor(model => model.Cunning, htmlAttributes: new { @class = "control-label" })
+                        @Html.LabelFor(model => model.Species.Cunning, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Cunning, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Cunning, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Species.Cunning, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Species.Cunning, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group col-md-2">
-                        @Html.LabelFor(model => model.Willpower, htmlAttributes: new { @class = "control-label" })
+                        @Html.LabelFor(model => model.Species.Willpower, htmlAttributes: new { @class = "control-label" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Willpower, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Willpower, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Species.Willpower, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Species.Willpower, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group col-md-2">
-                        @Html.LabelFor(model => model.Presence, htmlAttributes: new { @class = "control-labelS" })
+                        @Html.LabelFor(model => model.Species.Presence, htmlAttributes: new { @class = "control-labelS" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Presence, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Presence, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Species.Presence, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Species.Presence, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -116,11 +116,10 @@
                 <!-- Quirks should be from the random list then foreach to display them-->
                 <div class="panel panel-info">
                     <div class="panel-heading">Quirks</div>
-                    <ul class="list-group">
-                        <!--TODO: for each loop for each quirk-->
-                        <li class="list-group-item quirks col-md-12">Points out illegal actions but still does them</li>
-                        <li class="list-group-item quirks col-md-12">Thinks they are from the past</li>
-                        <li class="list-group-item quirks col-md-12">Recovering cannibal</li>
+                    <ul class="list-group">                        
+                        @for(var i = 0; i < 3; i++){
+                        <li>@Html.EditorFor(model => model.Quirk.QuirkList, new { htmlAttributes = new { @class = "list-group-item" } })</li>
+                          }           
                     </ul>
                 </div>
 

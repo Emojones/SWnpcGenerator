@@ -6,17 +6,19 @@ using System.Web;
 
 namespace SWnpcGenerator.Models
 {
+
     public  class RandomSpecies
     {
-        Context db = new Context();
-
-        public object GetRandomSpecies()
+       public Species GetRandomSpecies()
         {
-            var getRandomSpecies = db.Spp
+            using (var db = new Context())
+            { 
+                var getRandomSpecies = db.Spp
                     .OrderBy(c => Guid.NewGuid())
                     .FirstOrDefault();
 
-            return getRandomSpecies;
+            return getRandomSpecies;  
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Web;
 
 namespace SWnpcGenerator.Models
 {
-    public class PlaverSavedNpc 
+    public class PlaverSavedNpc
     {
         public PlaverSavedNpc()
         {
@@ -43,5 +44,7 @@ namespace SWnpcGenerator.Models
         public int Willpower { get; set; }
         public int Presence { get; set; }
         public string QuirkList { get; set; }
+
+        
     }
 }

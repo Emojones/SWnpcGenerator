@@ -1,78 +1,78 @@
-﻿@model SWnpcGenerator.Models.PlaverSavedNpc
+﻿@model IEnumerable<SWnpcGenerator.Models.PlaverSavedNpc>
+
+    @{
+        ViewBag.Title = "SavedNPC";
+    }
 
 
-@{
-    ViewBag.Title = "SavedNPC";
-}
+    <div class="container body-content">
+        @foreach (var item in Model)
+        {
+            <div class="row nameSpecies">
+                <div class="charName col-md-3 pull-left"><h3>@Html.DisplayFor(modelItem => item.PlayerName)</h3>@Html.DisplayNameFor(model => model.PlayerName)</div>
+                <div class="species col-md-3 pull-right"><h3>@Html.DisplayFor(modelItem => item.SpeciesName)</h3>@Html.DisplayNameFor(model => model.SpeciesName)</div>
+            </div>
 
+            <h3>Stats</h3>
+            <div class="stats row">
+                <!-- number to be replaced with strongly typed calls to the model-->
+                <div class="statInterior col-md-2">
+                    <div>@Html.DisplayFor(modelItem => item.Brawn)</div>
+                    <div class="brawn">Brawn</div>
+                </div>
 
-<div class="container body-content">
-@foreach (var item in Model) { 
-    <div class="row nameSpecies">
-        <div class="charName col-md-3 pull-left"><h3>Name</h3>Name</div>
-        <div class="species col-md-3 pull-right"><h3>@Html.DisplayNameFor(model => model.SpeciesName)</h3>@Html.DisplayFor(modelItem => item.SpeciesName)</div>
-    </div>
+                <div class="statInterior col-md-2">
+                    <div>@Html.DisplayFor(modelItem => item.Agility)</div>
+                    <div class="agility">Agility</div>
+                </div>
 
-    <h3>Stats</h3>
-    <div class="stats row">
-        <!-- number to be replaced with strongly typed calls to the model-->        
-        <div class="statInterior col-md-2">
-            <div>@Html.DisplayFor(modelItem => item.Brawn)</div>
-            <div class="brawn">Brawn</div>
-        </div>
+                <div class="statInterior col-md-2">
+                    <div>@Html.DisplayFor(modelItem => item.Intellect)</div>
+                    <div class="intellect">Intellect</div>
+                </div>
 
-        <div class="statInterior col-md-2">
-            <div>@Html.DisplayFor(modelItem => item.Agility)</div>
-            <div class="agility">Agility</div>
-        </div>
+                <div class="statInterior col-md-2">
+                    <div>@Html.DisplayFor(modelItem => item.Cunning)</div>
+                    <div class="cunning">Cunning</div>
+                </div>
 
-        <div class="statInterior col-md-2">
-            <div>@Html.DisplayFor(modelItem => item.Intellect)</div>
-            <div class="intellect">Intellect</div>
-        </div>
+                <div class="statInterior col-md-2">
+                    <div>@Html.DisplayFor(modelItem => item.Willpower)</div>
+                    <div class="willpower">Willpower</div>
+                </div>
 
-        <div class="statInterior col-md-2">
-            <div>@Html.DisplayFor(modelItem => item.Cunning)</div>
-            <div class="cunning">Cunning</div>
-        </div>
+                <div class="statInterior col-md-2">
+                    <div>@Html.DisplayFor(modelItem => item.Presence)</div>
+                    <div class="presence">Presence</div>
+                </div>
 
-        <div class="statInterior col-md-2">
-            <div>@Html.DisplayFor(modelItem => item.Willpower)</div>
-            <div class="willpower">Willpower</div>
-        </div>
-
-        <div class="statInterior col-md-2">
-            <div>@Html.DisplayFor(modelItem => item.Presence)</div>
-            <div class="presence">Presence</div>
-        </div>
-
-    </div>
+            </div>
 
     <!-- Quirks should be from the random list then foreach to display them-->
-    <div class="panel panel-info">
-        <div class="panel-heading">Quirks</div>
-        <ul class="list-group">
-            <li>@Html.EditorFor(model => model.QuirkList, new { htmlAttributes = new { @class = "list-group-item" } })</li>        
-        </ul>
-    </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">Quirks</div>
+                <ul class="list-group">
+                    <li>@Html.EditorFor(model => item.QuirkList, new { htmlAttributes = new { @class = "list-group-item" } })</li>
+                </ul>
+            </div>
 
 
-    <div class="row">
-      
-        <!--edit button-->
-        <button type="button" class="btn btn-info pull-left" aria-label="Left Align">
-            <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
-            Update
-        </button>
-        <!--delete button-->
-        <button type="button" class="btn btn-danger pull-right" aria-label="Left Align">
-            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-            Delete
-        </button>
+            <div class="row">
+
+                <!--edit button-->
+                <button type="button" class="btn btn-info pull-left" aria-label="Left Align">
+                    <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    Update
+                </button>
+                <!--delete button-->
+                <button type="button" class="btn btn-danger pull-right" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                    Delete
+                </button>
+            </div>
+            <hr />
+        }
+
     </div>
-    <hr />
-}
-    
-</div>
 
 

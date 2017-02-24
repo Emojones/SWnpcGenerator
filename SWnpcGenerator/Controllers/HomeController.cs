@@ -57,8 +57,10 @@ namespace SWnpcGenerator.Controllers
 
 
         public ActionResult SavedNPC()
-        {            
-            return View(db.playerSaved.ToList());
+        {
+            var test = db.playerSaved.ToList();
+
+            return View(test);
         }
 
 

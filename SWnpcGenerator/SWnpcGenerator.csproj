@@ -166,8 +166,9 @@
     <Compile Include="Models\Quirk.cs" />
     <Compile Include="Models\RandomName.cs" />
     <Compile Include="Models\RandomNPC.cs" />
-    <Compile Include="Models\RandomQuirks.cs" />
-    <Compile Include="Models\RandomSpecies.cs" />
+    <Compile Include="Repositories\PlayerRepository.cs" />
+    <Compile Include="Repositories\RandomQuirksRepository.cs" />
+    <Compile Include="Repositories\RandomSpeciesRepository.cs" />
     <Compile Include="Models\Species.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

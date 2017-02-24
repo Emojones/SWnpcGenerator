@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SWnpcGenerator.Models
+namespace SWnpcGenerator.Repositories
 {
 
-    public  class RandomSpecies
+    public  class RandomSpeciesRepository
     {
        public Species GetRandomSpecies()
         {

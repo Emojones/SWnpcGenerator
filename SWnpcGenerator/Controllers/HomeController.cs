@@ -7,12 +7,14 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SWnpcGenerator.Models;
+using SWnpcGenerator.Repositories;
 
 namespace SWnpcGenerator.Controllers
 {
     public class HomeController : Controller
     {
-       private Context db = new Context();
+        //TODO: dude, get rid of this
+        private Context db = new Context();
         
         public ActionResult Index()
         {           
@@ -23,10 +25,11 @@ namespace SWnpcGenerator.Controllers
         public ActionResult RandomNPC()
         {
             var vm = new RandomNPC();
-            var randomSpeciesRepository = new RandomSpecies();
+
+            var randomSpeciesRepository = new RandomSpeciesRepository();
             vm.Species = randomSpeciesRepository.GetRandomSpecies();
 
-            var randomQuirkRepository = new RandomQuirks();
+            var randomQuirkRepository = new RandomQuirksRepository();
             vm.Quirk = randomQuirkRepository.GetRandomQuirks();
 
             var randomNameRepository = new RandomName();
@@ -36,25 +39,26 @@ namespace SWnpcGenerator.Controllers
         }
 
         // POST: Species/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RandomNPC(RandomNPC model)
+        public ActionResult RandomNPC(RandomNPC viewModel)
         {
             if (ModelState.IsValid)
             {
-                //change this to the new DB that is made up of random stuffs             
+                var playerSavedNpc = new PlaverSavedNpc(viewModel);
+                var playerRepository = new PlayerRepository();
+                playerRepository.save(playerSavedNpc);
+
                 return RedirectToAction("Index");
             }
 
-            return View(model);
+            return View(viewModel);
         }
 
 
         public ActionResult SavedNPC()
         {            
-            return View(db.Spp.ToList());
+            return View(db.playerSaved.ToList());
         }
 
 
@@ -67,12 +71,12 @@ namespace SWnpcGenerator.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //TODO update to randomized db
-            Species species = db.Spp.Find(id);
-            if (species == null)
+            PlaverSavedNpc savedNpc = db.playerSaved.Find(id);
+            if (savedNpc == null)
             {
                 return HttpNotFound();
             }
-            return View(species);
+            return View(savedNpc);
         }
 
         // POST: Species/Edit/
@@ -80,15 +84,15 @@ namespace SWnpcGenerator.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,SpeciesName,WoundThreshold,StrainThreshold,StartExp,Brawn,Agility,Intellect,Cunning,Willpower,Presence")] Species species)
+        public ActionResult Edit(PlaverSavedNpc savedNpc)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(species).State = EntityState.Modified;
+                db.Entry(savedNpc).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(species);
+            return View(savedNpc);
         }
 
         // GET: Species/Delete/5
@@ -98,23 +102,21 @@ namespace SWnpcGenerator.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Species species = db.Spp.Find(id);
-            if (species == null)
+            PlaverSavedNpc savedNpc = db.playerSaved.Find(id);
+            if (savedNpc == null)
             {
                 return HttpNotFound();
             }
-            return View(species);
+            return View(savedNpc);
         }
 
         // POST: Species/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
-        {
-
-            //TODO: change to randomized db
-            Species species = db.Spp.Find(id);
-            db.Spp.Remove(species);
+        {            
+            PlaverSavedNpc savedNpc = db.playerSaved.Find(id);
+            db.playerSaved.Remove(savedNpc);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

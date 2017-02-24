@@ -116,11 +116,8 @@
                 
                 <div class="panel panel-info">
                     <div class="panel-heading">Quirks</div>
-                    <ul class="list-group"> 
-                           <!-- TODO: quirks are getting cut off, same quirk is getting passed all threetimes.-->                    
-                        @for(var i = 0; i < 3; i++){
-                        <li>@Html.EditorFor(model => model.Quirk.QuirkList, new { htmlAttributes = new { @class = "list-group-item" } })</li>
-                          }           
+                    <ul class="list-group">                            
+                        <li>@Html.EditorFor(model => model.Quirk.QuirkList, new { htmlAttributes = new { @class = "list-group-item" } })</li>                                   
                     </ul>
                 </div>
 

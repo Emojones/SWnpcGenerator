@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SWnpcGenerator.Models.Species>
+﻿@model SWnpcGenerator.Models.PlaverSavedNpc
 
 
 @{
@@ -7,8 +7,7 @@
 
 
 <div class="container body-content">
-
- @foreach (var item in Model) { 
+@foreach (var item in Model) { 
     <div class="row nameSpecies">
         <div class="charName col-md-3 pull-left"><h3>Name</h3>Name</div>
         <div class="species col-md-3 pull-right"><h3>@Html.DisplayNameFor(model => model.SpeciesName)</h3>@Html.DisplayFor(modelItem => item.SpeciesName)</div>
@@ -16,8 +15,7 @@
 
     <h3>Stats</h3>
     <div class="stats row">
-        <!-- number to be replaced with strongly typed calls to the model-->
-        <!--foreach loop to iterate through the fields in stats-->
+        <!-- number to be replaced with strongly typed calls to the model-->        
         <div class="statInterior col-md-2">
             <div>@Html.DisplayFor(modelItem => item.Brawn)</div>
             <div class="brawn">Brawn</div>
@@ -54,10 +52,7 @@
     <div class="panel panel-info">
         <div class="panel-heading">Quirks</div>
         <ul class="list-group">
-            <!--TODO: for each loop for each quirk-->
-            <li class="list-group-item quirks col-md-12">Points out illegal actions but still does them</li>
-            <li class="list-group-item quirks col-md-12">Thinks they are from the past</li>
-            <li class="list-group-item quirks col-md-12">Recovering cannibal</li>
+            <li>@Html.EditorFor(model => model.QuirkList, new { htmlAttributes = new { @class = "list-group-item" } })</li>        
         </ul>
     </div>
 
@@ -76,7 +71,7 @@
         </button>
     </div>
     <hr />
- }
+}
     
 </div>
 

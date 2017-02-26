@@ -59,15 +59,16 @@
 
             <div class="row">
 
+                
                 <!--edit button-->
-                <button type="button" class="btn btn-info pull-left" aria-label="Left Align">
+                <button type="button" class = "btn btn-info pull-left" aria-label="Left Align" onclick="location.href='@Url.Action("Edit", "Home", new { PlayerSavedId = item.PlayerSavedId})'">
                     <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
-                    Update
+                     Update
                 </button>
                 <!--delete button-->
-                <button type="button" class="btn btn-danger pull-right" aria-label="Left Align">
+                <button type="button" class= "btn btn-danger pull-right" aria-label="Left Align" onclick="location.href='@Url.Action("Delete", "Home",  new { PlayerSavedId = item.PlayerSavedId})'">
                     <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-                    Delete
+                    Delete                
                 </button>
             </div>
             <hr />

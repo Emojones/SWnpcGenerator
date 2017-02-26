@@ -13,7 +13,8 @@ namespace SWnpcGenerator.Controllers
 {
     public class HomeController : Controller
     {
-        //TODO: dude, get rid of this
+        //TODO: dude, get rid of thisd
+        //TODO: double check responsive design
         private Context db = new Context();
         
         public ActionResult Index()
@@ -62,18 +63,16 @@ namespace SWnpcGenerator.Controllers
 
             return View(test);
         }
-
-
        
         // GET: Species/Edit/
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? PlayerSavedId)
         {
-            if (id == null)
+            if (PlayerSavedId == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //TODO update to randomized db
-            PlaverSavedNpc savedNpc = db.playerSaved.Find(id);
+          
+            PlaverSavedNpc savedNpc = db.playerSaved.Find(PlayerSavedId);
             if (savedNpc == null)
             {
                 return HttpNotFound();
@@ -82,8 +81,6 @@ namespace SWnpcGenerator.Controllers
         }
 
         // POST: Species/Edit/
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(PlaverSavedNpc savedNpc)
@@ -92,19 +89,19 @@ namespace SWnpcGenerator.Controllers
             {
                 db.Entry(savedNpc).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("SavedNPC");
             }
             return View(savedNpc);
         }
 
-        // GET: Species/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Species/Delete/
+        public ActionResult Delete(int? PlayerSavedId)
         {
-            if (id == null)
+            if (PlayerSavedId == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PlaverSavedNpc savedNpc = db.playerSaved.Find(id);
+            PlaverSavedNpc savedNpc = db.playerSaved.Find(PlayerSavedId);
             if (savedNpc == null)
             {
                 return HttpNotFound();
@@ -112,15 +109,15 @@ namespace SWnpcGenerator.Controllers
             return View(savedNpc);
         }
 
-        // POST: Species/Delete/5
+        // POST: Species/Delete/
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int PlayerSavedId)
         {            
-            PlaverSavedNpc savedNpc = db.playerSaved.Find(id);
+            PlaverSavedNpc savedNpc = db.playerSaved.Find(PlayerSavedId);
             db.playerSaved.Remove(savedNpc);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("SavedNPC");
         }
 
         protected override void Dispose(bool disposing)

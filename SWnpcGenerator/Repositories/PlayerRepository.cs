@@ -18,5 +18,6 @@ namespace SWnpcGenerator.Repositories
                 context.SaveChanges();
             }
         }
+
     }
 }

@@ -50,7 +50,7 @@ namespace SWnpcGenerator.Controllers
                 var playerRepository = new PlayerRepository();
                 playerRepository.save(playerSavedNpc);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("SavedNPC");
             }
 
             return View(viewModel);

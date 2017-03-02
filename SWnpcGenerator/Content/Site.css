@@ -65,3 +65,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+footer {
+    margin-top: 40px;
+}
+

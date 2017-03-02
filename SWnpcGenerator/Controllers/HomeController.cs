@@ -16,10 +16,10 @@ namespace SWnpcGenerator.Controllers
         //TODO: dude, get rid of thisd
         //TODO: double check responsive design
         private Context db = new Context();
-        
+
         public ActionResult Index()
-        {           
-           return View(); 
+        {
+            return View();
         }
 
         //Create
@@ -35,7 +35,7 @@ namespace SWnpcGenerator.Controllers
 
             var randomNameRepository = new RandomName();
             vm.RandomName = randomNameRepository.GenerateName();
-                                 
+
             return View(vm);
         }
 
@@ -63,7 +63,7 @@ namespace SWnpcGenerator.Controllers
 
             return View(test);
         }
-       
+
         // GET: Species/Edit/
         public ActionResult Edit(int? PlayerSavedId)
         {
@@ -71,7 +71,7 @@ namespace SWnpcGenerator.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-          
+
             PlaverSavedNpc savedNpc = db.playerSaved.Find(PlayerSavedId);
             if (savedNpc == null)
             {
@@ -113,7 +113,7 @@ namespace SWnpcGenerator.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int PlayerSavedId)
-        {            
+        {
             PlaverSavedNpc savedNpc = db.playerSaved.Find(PlayerSavedId);
             db.playerSaved.Remove(savedNpc);
             db.SaveChanges();

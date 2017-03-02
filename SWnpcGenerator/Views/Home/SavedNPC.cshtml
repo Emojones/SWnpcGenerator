@@ -1,21 +1,20 @@
 ﻿@model IEnumerable<SWnpcGenerator.Models.PlaverSavedNpc>
 
-    @{
-        ViewBag.Title = "SavedNPC";
-    }
+@{
+    ViewBag.Title = "SavedNPC";
+}
 
 
-    <div class="container body-content">
-        @foreach (var item in Model)
-        {
-            <div class="row nameSpecies">
-                <div class="charName col-md-3 pull-left"><h3>@Html.DisplayFor(modelItem => item.PlayerName)</h3>@Html.DisplayNameFor(model => model.PlayerName)</div>
-                <div class="species col-md-3 pull-right"><h3>@Html.DisplayFor(modelItem => item.SpeciesName)</h3>@Html.DisplayNameFor(model => model.SpeciesName)</div>
-            </div>
+<div class="container body-content">
+    @foreach (var item in Model)
+    {
+        <div class="row nameSpecies">
+            <div class="charName col-md-3 pull-left"><h3>@Html.DisplayFor(modelItem => item.PlayerName)</h3>@Html.DisplayNameFor(model => model.PlayerName)</div>
+            <div class="species col-md-3 pull-right"><h3>@Html.DisplayFor(modelItem => item.SpeciesName)</h3>@Html.DisplayNameFor(model => model.SpeciesName)</div>
+        </div>
 
             <h3>Stats</h3>
             <div class="stats row">
-                <!-- number to be replaced with strongly typed calls to the model-->
                 <div class="statInterior col-md-2">
                     <div>@Html.DisplayFor(modelItem => item.Brawn)</div>
                     <div class="brawn">Brawn</div>
@@ -58,22 +57,20 @@
 
 
             <div class="row">
-
-                
                 <!--edit button-->
-                <button type="button" class = "btn btn-info pull-left" aria-label="Left Align" onclick="location.href='@Url.Action("Edit", "Home", new { PlayerSavedId = item.PlayerSavedId})'">
+                <button type="button" class="btn btn-info pull-left" aria-label="Left Align" onclick="location.href='@Url.Action("Edit", "Home", new { PlayerSavedId = item.PlayerSavedId})'">
                     <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
-                     Update
+                    Update
                 </button>
                 <!--delete button-->
-                <button type="button" class= "btn btn-danger pull-right" aria-label="Left Align" onclick="location.href='@Url.Action("Delete", "Home",  new { PlayerSavedId = item.PlayerSavedId})'">
+                <button type="button" class="btn btn-danger pull-right" aria-label="Left Align" onclick="location.href='@Url.Action("Delete", "Home",  new { PlayerSavedId = item.PlayerSavedId})'">
                     <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-                    Delete                
+                    Delete
                 </button>
             </div>
             <hr />
-        }
+    }
 
-    </div>
+</div>
 
 

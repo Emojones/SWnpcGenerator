@@ -4,16 +4,15 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
 <div class="container body-content">
+    <h2>Delete</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
     <div class="row nameSpecies">
         <div class="charName col-md-3 pull-left"><h3>@Html.EditorFor(modelItem => Model.PlayerName)</h3>@Html.DisplayNameFor(model => model.PlayerName)</div>
         <div class="species col-md-3 pull-right"><h3>@Html.EditorFor(modelItem => Model.SpeciesName)</h3>@Html.DisplayNameFor(model => model.SpeciesName)</div>
     </div>
-
-    <hr />
+        
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.PlayerSavedId)
 
@@ -66,12 +65,12 @@
         <div class="row">
             <!--Delete button-->
             <button type="submit" value="Delete" class="btn btn-danger pull-left" aria-label="Left Align">
-                <span class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
                 Delete
             </button>
             <!--back button-->
-            <button type="button" class="btn btn-info pull-right" aria-label="Left Align" onclick="location.href='@Url.Action("SavedNPC", "Home")'">
-                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+            <button type="button" class="btn btn-success pull-right" aria-label="Left Align" onclick="location.href='@Url.Action("SavedNPC", "Home")'">
+                <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
                 Back to List
             </button>
         </div>

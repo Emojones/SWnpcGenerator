@@ -46,6 +46,7 @@
 
 .stats > div {
     background-color: beige;
+    border-radius: 10%;
 }
 
 .buttons {
@@ -70,3 +71,28 @@ footer {
     margin-top: 40px;
 }
 
+.list-group-item {
+    min-width: 100%;
+}
+
+.statInterior{
+    background-image: url("/imgs/statblock.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 73px;
+    width: 73px;
+    
+}
+
+.statLabel {
+    margin: 50%;
+    display: inline-block;
+}
+
+
+.attribute {
+    align-content: center;
+    text-align: center;       
+    color: white;
+    display: inline-block;
+ }

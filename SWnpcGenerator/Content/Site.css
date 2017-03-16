@@ -34,15 +34,19 @@
 }
 
 .nameSpecies div {
-    background-image: url("../imgs/GrayPanel.png");
-    width:auto;
-    height: auto;
+    background-image: url("../imgs/GrayPanel.png");   
 }
 
 /* Stat block formatting */
 .stats {
     padding-bottom: 25px;
 }
+
+.row {
+    padding-left: 15px;
+}
+
+
 
 .stats > div {
     background-color: beige;
@@ -79,20 +83,26 @@ footer {
     background-image: url("/imgs/statblock.png");
     background-size: contain;
     background-repeat: no-repeat;
-    height: 73px;
-    width: 73px;
-    
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+    position: relative;
+            
 }
 
 .statLabel {
-    margin: 50%;
-    display: inline-block;
+    position: absolute;
+    bottom: 47%;
+    left: 45%;
+    text-align: center;
 }
 
 
-.attribute {
-    align-content: center;
-    text-align: center;       
+.attribute {  
+           
     color: white;
-    display: inline-block;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    vertical-align:middle;
  }

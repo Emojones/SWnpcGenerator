@@ -8,6 +8,7 @@ namespace SWnpcGenerator.Repositories
 {
     public class RandomQuirksRepository
     {
+        //reorders items with GUID so it returns a new random row from the quirks db.
        public Quirk GetRandomQuirks()
         {
             using (var db = new Context())

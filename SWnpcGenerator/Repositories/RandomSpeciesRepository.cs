@@ -6,8 +6,8 @@ using System.Web;
 
 namespace SWnpcGenerator.Repositories
 {
-
-    public  class RandomSpeciesRepository
+    //reorders items with GUID so it returns a new random row from the species db.
+    public class RandomSpeciesRepository
     {
        public Species GetRandomSpecies()
         {

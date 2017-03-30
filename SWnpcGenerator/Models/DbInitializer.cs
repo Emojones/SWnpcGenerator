@@ -6,6 +6,7 @@ namespace SWnpcGenerator.Models
 {
     internal class DbInitializer : DropCreateDatabaseIfModelChanges<Context>
     {
+        //seed data for the database
         protected override void Seed(Context context)
         {
 

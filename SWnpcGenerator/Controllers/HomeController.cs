@@ -13,8 +13,7 @@ namespace SWnpcGenerator.Controllers
 {
     public class HomeController : Controller
     {
-        //TODO: dude, get rid of thisd
-        //TODO: double check responsive design
+        
         private Context db = new Context();
 
         public ActionResult Index()

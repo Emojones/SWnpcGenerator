@@ -9,6 +9,7 @@ namespace SWnpcGenerator.Repositories
 {
     public class PlayerRepository
     {
+        //sves the PlayerSavedNpc to the database
         public void save(PlaverSavedNpc playerSave)
         {
             using (var context = new Context())

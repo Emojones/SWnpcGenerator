@@ -6,8 +6,7 @@ namespace SWnpcGenerator
 {
     public  class RandomName
     {
-        //TODO: Redo to return a repository
-
+        //Assembles a random name based on the syllables
         private  Random _random = new Random();
 
         private  List<string> _firstSyllable = new List<string>

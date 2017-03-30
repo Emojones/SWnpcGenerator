@@ -14,6 +14,7 @@ namespace SWnpcGenerator.Models
                 
         }
 
+        //maps the PlayerSavedNpc data model to the randomNpc object
         public PlaverSavedNpc(RandomNPC randomNpc)
         {            
             this.PlayerName = randomNpc.RandomName;
